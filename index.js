@@ -18,6 +18,7 @@ for(let i=0; i<interestsDOM.length; i++){
 
 }
 
+
 let userData = {
     firstname : firstNameDOM.value,
     lastname : lastNameDOM.value,
