@@ -16,7 +16,25 @@ DELETE /users/:id สำหรับลบ user ที่มี id ตามท�
 GET /users/:id สำหรับ get user ที่มี id ตามที่ระบุ
 PUT /users/:id สำหรับ update user ที่มี id ตามที่ระบุ
 */
-
+app.get('/testdb', (req, res) => {
+    mysql.createConnection({
+        host: 'localhost',
+        user:'root',
+        password: 'root',
+        database: 'weddb',
+        port: 8830
+    }).then((conn) => {
+        conn
+        .query('SELECT * FROM users')
+        .then(([results]) => {
+            res.json(results[0])
+        })
+        .catch((error) => {
+            res.json('Error fetching users:', error.message)
+            res.status(500).json({error: 'Error fetching users'})
+        })
+   })
+})
 //path = GET /users
 app.get('/users', (req, res) => {
     res.json(users);
