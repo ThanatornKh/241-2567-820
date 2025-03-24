@@ -11,7 +11,7 @@ body {
     max-width: 640px;
     margin-left: auto;
     margin-right: auto;
-    background-color: azure;
+    background-color: rgb(222, 160, 255);
     padding: 20px;
     box-sizing: border-box;
 }
@@ -41,6 +41,20 @@ input.form, textarea {
     width: 50%;
     background-color: aqua;
     height: 40px;
+}
+.message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: lightgray;
+    display: none;
+}
+.message.success {
+    background-color: lightgreen;
+    display: block;
+}
+.message.danger {
+    background-color: lightcoral;
+    display: block;
 }
 
 @media screen and (max-width: 768px) {
